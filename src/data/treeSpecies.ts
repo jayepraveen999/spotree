@@ -12,7 +12,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Very common in Munich parks and surrounding Bavarian forests',
     funFact:
       'Beech forests are so dense they create their own microclimate — the forest floor stays cool and humid even on hot days, supporting unique shade-loving plants.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Buche_Süntel.jpg/800px-Buche_Süntel.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Fagus-sylvatica-cansiglio-forest-italy.jpg/800px-Fagus-sylvatica-cansiglio-forest-italy.jpg',
     identificationTips: [
       'Smooth, silver-grey bark that stays smooth even on very old trees',
       'Oval leaves with slightly wavy margins, glossy dark green above',
@@ -52,7 +52,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Very common as a street tree throughout Munich',
     funFact:
       'Linden flowers produce abundant nectar and are a major source for honey production. Lindenblütentee (linden blossom tea) is one of Germany\'s most popular herbal teas.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Tilia_cordata_-_small_leaved_linden_-_Winterlinde.jpg/800px-Tilia_cordata_-_small_leaved_linden_-_Winterlinde.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Tilia-cordata2.JPG/800px-Tilia-cordata2.JPG',
     identificationTips: [
       'Heart-shaped leaves with tufts of orange-brown hair in vein axils underneath',
       'Fragrant yellowish-white flowers in clusters in early summer',
@@ -72,7 +72,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in parks, gardens, and as hedging throughout Munich',
     funFact:
       'The name "hornbeam" comes from the extreme hardness of its wood — "horn" meaning tough, "beam" being the old English word for tree. It was historically used for butcher\'s blocks and ox yokes.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Carpinus_betulus_-_Hainbuche.jpg/800px-Carpinus_betulus_-_Hainbuche.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg/800px-Carpinus_betulus_-_Hunsr%C3%BCck_001.jpg',
     identificationTips: [
       'Leaves resemble beech but have doubly toothed (serrated) edges',
       'Distinctive fluted, muscle-like grey trunk',
@@ -92,7 +92,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in parks, gardens, and forest edges around Munich',
     funFact:
       'Birch sap has been harvested as a drink across Northern Europe for centuries. In spring, a single tree can yield several litres of sweet, mineral-rich sap per day.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Birch_PB_Betula_pendula.jpg/800px-Birch_PB_Betula_pendula.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Betula_pendula_Finland.jpg/800px-Betula_pendula_Finland.jpg',
     identificationTips: [
       'White peeling bark with black diamond-shaped patches on older trunks',
       'Gracefully drooping (pendulous) branch tips',
@@ -112,7 +112,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Found in parks, forest edges, and gardens across Munich',
     funFact:
       'Cherry wood is highly prized for furniture making due to its warm reddish colour. The tree\'s bark has distinctive horizontal bands (lenticels) that help it breathe.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Prunus_avium_fruit.jpg/800px-Prunus_avium_fruit.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Prunus_avium_fruit.jpg/800px-Prunus_avium_fruit.jpg',
     identificationTips: [
       'Glossy reddish-brown bark with horizontal peeling bands',
       'Masses of white flowers in April before leaves appear',
@@ -132,7 +132,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in parks and as a street tree in Munich',
     funFact:
       'In European folklore, rowan was believed to protect against enchantment. The species name "aucuparia" means "bird-catching" — fowlers once used the sticky berries to trap birds.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Sorbus_aucuparia_fruits.jpg/800px-Sorbus_aucuparia_fruits.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Rowan_tree_20081002b.jpg/800px-Rowan_tree_20081002b.jpg',
     identificationTips: [
       'Compound leaves with many small paired leaflets along a central stalk',
       'Flat-topped clusters of creamy white flowers in May–June',
@@ -152,7 +152,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in hedgerows, parks, and as a smaller street tree',
     funFact:
       'Field maple wood was traditionally used to make musical instruments, particularly harps and flutes, due to its fine, even grain and resonant qualities.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Acer_campestre_leaves.jpg/800px-Acer_campestre_leaves.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Acer_campestre_in_Appennino2.jpg/800px-Acer_campestre_in_Appennino2.jpg',
     identificationTips: [
       'Small five-lobed leaves with rounded (not pointed) lobes',
       'No milky sap when leaf stalk is broken (unlike Norway maple)',
@@ -172,7 +172,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common along the Isar and other waterways in Munich',
     funFact:
       'Alder wood doesn\'t rot underwater and was historically used for canal locks, bridge pilings, and water pipes. Much of Venice is built on alder wood foundations.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Alnus_glutinosa_003.jpg/800px-Alnus_glutinosa_003.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/20120904Alnus_glutinosa01.jpg/800px-20120904Alnus_glutinosa01.jpg',
     identificationTips: [
       'Rounded leaves with a distinctive notched (indented) tip',
       'Tiny woody "cones" persist on the tree year-round',
@@ -192,7 +192,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in parks, forest edges, and along waterways',
     funFact:
       'Goat willow catkins are among the first pollen sources of the year, appearing as early as February. A single tree can attract hundreds of bees on a warm late-winter day.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Salix_caprea_catkins.jpg/800px-Salix_caprea_catkins.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Waterwilg_%28DSC_2539%29.jpg/800px-Waterwilg_%28DSC_2539%29.jpg',
     identificationTips: [
       'Soft, silvery catkins ("pussy willows") appear in February–March before leaves',
       'Broad oval leaves, grey and woolly on the underside',
@@ -212,7 +212,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Found in forest edges and clearings around Munich',
     funFact:
       'The leaves tremble because their leaf stalks are flattened sideways, causing them to catch the wind differently. The German name "Zitterpappel" literally means "trembling poplar."',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Populus_tremula.jpg/800px-Populus_tremula.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/PopulusTremula001.JPG/800px-PopulusTremula001.JPG',
     identificationTips: [
       'Round leaves that tremble and flutter constantly in any breeze',
       'Smooth, pale greenish-grey bark with diamond-shaped pores',
@@ -232,7 +232,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Found in parks, gardens, and churchyards in Munich',
     funFact:
       'The cancer-fighting drug Taxol was originally derived from yew bark. Despite being one of the most poisonous trees in Europe, yew has saved countless lives through modern medicine.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Taxus_baccata_MHNT.jpg/800px-Taxus_baccata_MHNT.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Taxus_baccata_MHNT.jpg/800px-Taxus_baccata_MHNT.jpg',
     identificationTips: [
       'Flat, dark green needles arranged in two rows along the twig',
       'Bright red fleshy berry-like structures (arils) in autumn',
@@ -252,7 +252,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Very common in beer gardens, parks, and along boulevards',
     funFact:
       'Munich\'s beer garden tradition exists partly because of this tree. Brewers planted chestnuts over underground cellars to keep beer cool before refrigeration — the shaded ground stayed cooler in summer.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Aesculus_hippocastanum_fruit.jpg/800px-Aesculus_hippocastanum_fruit.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Illustration_Aesculus_hippocastanum0_clean.jpg/800px-Illustration_Aesculus_hippocastanum0_clean.jpg',
     identificationTips: [
       'Large "hand-shaped" compound leaves with 5–7 leaflets',
       'Showy white/pink flower "candles" in May',
@@ -272,7 +272,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Common in parks and the sandy forests north and east of Munich',
     funFact:
       'Scots pine has the widest natural range of any pine species, stretching from Scotland to eastern Siberia — a span of over 14,000 km across two continents.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Pinus_sylvestris_Kiiminki_2015.jpg/800px-Pinus_sylvestris_Kiiminki_2015.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Skuleskogen_pine.jpg/800px-Skuleskogen_pine.jpg',
     identificationTips: [
       'Orange-red flaky bark on the upper trunk and branches',
       'Needles always in pairs, twisted, blue-green',
@@ -292,7 +292,7 @@ export const MUNICH_TREE_SPECIES: TreeSpeciesInfo[] = [
     prevalence: 'Declining due to ash dieback, but still found in parks and along rivers',
     funFact:
       'In Norse mythology, the world tree Yggdrasil was an ash. Mapping healthy ash trees contributes to real conservation efforts — scientists are looking for disease-resistant individuals.',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Fraxinus_excelsior_-_Essen.jpg/800px-Fraxinus_excelsior_-_Essen.jpg',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Fraxinus_excelsior.jpg/800px-Fraxinus_excelsior.jpg',
     identificationTips: [
       'Compound leaves with 7–13 leaflets arranged in opposite pairs',
       'Distinctive jet-black buds — unique among European trees',
