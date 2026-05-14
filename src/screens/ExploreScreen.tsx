@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import { TreeEntry } from '../types';
 
-function TreeCard({ tree }: { tree: TreeEntry }) {
+function TreeCard({ tree, onViewMap }: { tree: TreeEntry; onViewMap: () => void }) {
   const timeAgo = (date: string) => {
     const diff = Date.now() - new Date(date).getTime();
     const hours = Math.floor(diff / (1000 * 60 * 60));
@@ -92,12 +92,17 @@ function TreeCard({ tree }: { tree: TreeEntry }) {
             <Ionicons name="play-circle" size={22} color="#1DB954" />
           </TouchableOpacity>
         ) : null}
+
+        <TouchableOpacity style={styles.mapButton} onPress={onViewMap}>
+          <Ionicons name="map-outline" size={16} color="#2d6a4f" />
+          <Text style={styles.mapButtonText}>View on Map</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-export default function ExploreScreen() {
+export default function ExploreScreen({ navigation }: any) {
   const { trees } = useApp();
 
   const sorted = [...trees].sort(
@@ -111,7 +116,9 @@ export default function ExploreScreen() {
       <FlatList
         data={sorted}
         keyExtractor={(item) => item.id}
-        renderItem={({ item }) => <TreeCard tree={item} />}
+        renderItem={({ item }) => (
+          <TreeCard tree={item} onViewMap={() => navigation.navigate('Map', { focusLat: item.latitude, focusLng: item.longitude })} />
+        )}
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
         ListEmptyComponent={
@@ -237,6 +244,23 @@ const styles = StyleSheet.create({
   spotifyInfo: { flex: 1 },
   spotifyTrack: { fontSize: 14, fontWeight: '600', color: '#333' },
   spotifyArtist: { fontSize: 12, color: '#888' },
+  mapButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    marginTop: 10,
+    paddingVertical: 8,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#b7e4c7',
+    backgroundColor: '#f0fdf4',
+  },
+  mapButtonText: {
+    fontSize: 13,
+    fontWeight: '600',
+    color: '#2d6a4f',
+  },
   empty: {
     alignItems: 'center',
     marginTop: 80,

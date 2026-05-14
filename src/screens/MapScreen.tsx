@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, useRef, useEffect } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Modal, Linking, Image } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { Ionicons } from '@expo/vector-icons';
+import { useFocusEffect, useRoute } from '@react-navigation/native';
 import { useApp } from '../context/AppContext';
 import { TreeEntry } from '../types';
 
@@ -13,7 +14,24 @@ const MUNICH_REGION = {
 };
 
 export default function MapScreen({ navigation }: any) {
-  const { trees } = useApp();
+  const { trees, refreshTrees } = useApp();
+  const mapRef = useRef<MapView>(null);
+  const route = useRoute<any>();
+
+  useFocusEffect(
+    useCallback(() => {
+      refreshTrees();
+      if (route.params?.focusLat && route.params?.focusLng) {
+        mapRef.current?.animateToRegion({
+          latitude: route.params.focusLat,
+          longitude: route.params.focusLng,
+          latitudeDelta: 0.005,
+          longitudeDelta: 0.005,
+        }, 600);
+        navigation.setParams({ focusLat: undefined, focusLng: undefined });
+      }
+    }, [refreshTrees, route.params?.focusLat, route.params?.focusLng]),
+  );
   const [selected, setSelected] = useState<TreeEntry | null>(null);
 
   const openSpotify = (url: string) => {
@@ -22,7 +40,7 @@ export default function MapScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <MapView style={styles.map} initialRegion={MUNICH_REGION}>
+      <MapView ref={mapRef} style={styles.map} initialRegion={MUNICH_REGION}>
         {trees.map((tree) => (
           <Marker
             key={tree.id}

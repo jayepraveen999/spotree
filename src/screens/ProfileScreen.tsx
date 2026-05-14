@@ -66,22 +66,24 @@ export default function ProfileScreen() {
         <View style={styles.schoolHeader}>
           <Ionicons name="school" size={20} color="#2d6a4f" />
           <Text style={styles.schoolLabel}>School</Text>
-          <TouchableOpacity
-            onPress={() => {
-              if (editingSchool) {
-                handleSaveSchool();
-              } else {
-                setSchoolInput(authUser?.schoolName || '');
-                setEditingSchool(true);
-              }
-            }}
-          >
-            <Ionicons
-              name={editingSchool ? 'checkmark-circle' : 'pencil'}
-              size={20}
-              color="#2d6a4f"
-            />
-          </TouchableOpacity>
+          {(!authUser?.schoolName || editingSchool) && (
+            <TouchableOpacity
+              onPress={() => {
+                if (editingSchool) {
+                  handleSaveSchool();
+                } else {
+                  setSchoolInput('');
+                  setEditingSchool(true);
+                }
+              }}
+            >
+              <Ionicons
+                name={editingSchool ? 'checkmark-circle' : 'pencil'}
+                size={20}
+                color="#2d6a4f"
+              />
+            </TouchableOpacity>
+          )}
         </View>
         {editingSchool ? (
           <TextInput

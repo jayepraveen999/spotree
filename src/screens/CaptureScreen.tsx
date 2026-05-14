@@ -231,7 +231,9 @@ export default function CaptureScreen({ navigation }: any) {
     getLocation();
   }, []);
 
-  const handleSubmit = () => {
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleSubmit = async () => {
     if (!photoConfirmed) {
       Alert.alert('Photo required', 'Please add a photo and verify it contains a tree.');
       return;
@@ -241,32 +243,49 @@ export default function CaptureScreen({ navigation }: any) {
       return;
     }
 
-    const tree = {
-      id: Date.now().toString(),
-      latitude: location?.lat ?? 48.1351,
-      longitude: location?.lng ?? 11.582,
-      photoUri,
-      species,
-      speciesConfidence,
-      healthStatus: health,
-      healthConfidence,
-      estimatedHeight: height,
-      heightConfidence,
-      trunkDiameter: diameter,
-      diameterConfidence,
-      notes,
-      spotifyUrl,
-      spotifyTrackName,
-      spotifyArtist,
-      createdAt: new Date().toISOString(),
-      userId: 'current-user',
-      userName: 'You',
-    };
-
-    addTree(tree);
-    Alert.alert('Tree mapped!', 'Your tree has been added to the map.', [
-      { text: 'View Map', onPress: () => navigation.navigate('Map') },
-    ]);
+    setSubmitting(true);
+    try {
+      await addTree({
+        latitude: location?.lat ?? 48.1351,
+        longitude: location?.lng ?? 11.582,
+        photoUri,
+        species,
+        speciesConfidence,
+        healthStatus: health,
+        healthConfidence,
+        estimatedHeight: height,
+        heightConfidence,
+        trunkDiameter: diameter,
+        diameterConfidence,
+        notes,
+        spotifyUrl,
+        spotifyTrackName,
+        spotifyArtist,
+        createdAt: new Date().toISOString(),
+      });
+      setPhotoUri('');
+      setPhotoConfirmed(false);
+      setSpecies('');
+      setSpeciesConfidence(60);
+      setHealth('');
+      setHealthConfidence(60);
+      setHeight('');
+      setHeightConfidence(60);
+      setDiameter('');
+      setDiameterConfidence(60);
+      setNotes('');
+      setSpotifyUrl('');
+      setSpotifyTrackName('');
+      setSpotifyArtist('');
+      Alert.alert('Tree mapped!', 'Your tree has been added to the map.', [
+        { text: 'View Map', onPress: () => navigation.navigate('Map') },
+        { text: 'OK' },
+      ]);
+    } catch (e: any) {
+      Alert.alert('Error', e.message || 'Failed to save tree. Please try again.');
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const speciesNames = ALL_MUNICH_SPECIES;

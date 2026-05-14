@@ -42,10 +42,7 @@ export default function RegisterScreen({ navigation }: any) {
     try {
       await signUp(email, password, name, schoolName);
     } catch (e: any) {
-      let message = 'Something went wrong.';
-      if (e.code === 'auth/email-already-in-use') message = 'This email is already registered.';
-      if (e.code === 'auth/invalid-email') message = 'Please enter a valid email address.';
-      Alert.alert('Registration Failed', message);
+      Alert.alert('Registration Failed', e.message || 'Something went wrong.');
     } finally {
       setLoading(false);
     }
