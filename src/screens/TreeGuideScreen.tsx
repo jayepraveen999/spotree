@@ -8,6 +8,7 @@ import {
   Image,
   Modal,
   ScrollView,
+  Linking,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { MUNICH_TREE_SPECIES } from '../data/treeSpecies';
@@ -114,6 +115,19 @@ export default function TreeGuideScreen() {
                   <Ionicons name="bulb" size={20} color="#f59e0b" />
                   <Text style={styles.funFactText}>{selected.funFact}</Text>
                 </View>
+
+                {selected.easyscapeUrl ? (
+                  <TouchableOpacity
+                    style={styles.easyscapeButton}
+                    onPress={() => Linking.openURL(selected.easyscapeUrl)}
+                  >
+                    <Ionicons name="earth" size={18} color="#fff" />
+                    <Text style={styles.easyscapeButtonText}>
+                      Learn more on Easyscape
+                    </Text>
+                    <Ionicons name="open-outline" size={16} color="rgba(255,255,255,0.7)" />
+                  </TouchableOpacity>
+                ) : null}
 
                 <View style={{ height: 30 }} />
               </ScrollView>
@@ -279,5 +293,21 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#92400e',
     lineHeight: 20,
+  },
+  easyscapeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 8,
+    backgroundColor: '#2d6a4f',
+    borderRadius: 12,
+    padding: 14,
+    marginTop: 16,
+  },
+  easyscapeButtonText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: '600',
+    flex: 1,
   },
 });

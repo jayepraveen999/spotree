@@ -15,7 +15,8 @@ import * as ImagePicker from 'expo-image-picker';
 import * as Location from 'expo-location';
 import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
-import { MUNICH_TREE_SPECIES, HEALTH_OPTIONS, HEIGHT_OPTIONS, TRUNK_DIAMETER_OPTIONS } from '../data/treeSpecies';
+import { HEALTH_OPTIONS, HEIGHT_OPTIONS, TRUNK_DIAMETER_OPTIONS } from '../data/treeSpecies';
+import { ALL_MUNICH_SPECIES } from '../data/speciesNames';
 
 interface ConfidenceFieldProps {
   label: string;
@@ -205,7 +206,7 @@ export default function CaptureScreen({ navigation }: any) {
     ]);
   };
 
-  const speciesNames = MUNICH_TREE_SPECIES.map((s) => s.name);
+  const speciesNames = ALL_MUNICH_SPECIES;
 
   return (
     <KeyboardAvoidingView

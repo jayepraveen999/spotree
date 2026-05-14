@@ -31,6 +31,7 @@ export interface TreeSpeciesInfo {
   funFact: string;
   imageUrl: string;
   identificationTips: string[];
+  easyscapeUrl: string;
 }
 
 export interface UserProfile {
