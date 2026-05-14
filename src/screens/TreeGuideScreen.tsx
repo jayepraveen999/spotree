@@ -75,41 +75,55 @@ function InfoChip({ icon, label, value }: { icon: string; label: string; value: 
   );
 }
 
-function SpeciesCard({ species, onPress, onImagePress }: { species: TreeSpeciesInfo; onPress: () => void; onImagePress: () => void }) {
+function SpeciesCard({ species, onPress }: { species: TreeSpeciesInfo; onPress: () => void }) {
   const firstImage = species.images[0];
   return (
-    <View style={styles.card}>
-      <TouchableOpacity activeOpacity={0.9} onPress={onImagePress} style={StyleSheet.absoluteFill}>
-        <Image
-          source={firstImage as ImageSourcePropType}
-          style={styles.cardImage}
-          resizeMode="cover"
-        />
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.cardOverlay} onPress={onPress} activeOpacity={0.8}>
+    <TouchableOpacity style={styles.card} onPress={onPress} activeOpacity={0.8}>
+      <Image
+        source={firstImage as ImageSourcePropType}
+        style={styles.cardImage}
+        resizeMode="cover"
+      />
+      <View style={styles.cardOverlay}>
         <Text style={styles.cardName}>{species.name}</Text>
         <Text style={styles.cardScientific}>{species.scientificName}</Text>
-      </TouchableOpacity>
+      </View>
       {species.images.length > 1 && (
         <View style={styles.imageCountBadge}>
           <Ionicons name="images" size={10} color="#fff" />
           <Text style={styles.imageCountText}>{species.images.length}</Text>
         </View>
       )}
-    </View>
+    </TouchableOpacity>
   );
 }
 
 export default function TreeGuideScreen() {
   const [selected, setSelected] = useState<TreeSpeciesInfo | null>(null);
-  const [viewerImage, setViewerImage] = useState<{ images: number[]; index: number } | null>(null);
-  const viewerRef = useRef<FlatList>(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [viewerImages, setViewerImages] = useState<number[] | null>(null);
+  const [viewerIndex, setViewerIndex] = useState(0);
+
+  const openSpecies = (species: TreeSpeciesInfo) => {
+    setSelected(species);
+    setModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setModalVisible(false);
+    setTimeout(() => setSelected(null), 300);
+  };
+
+  const openViewer = (images: number[], index: number) => {
+    setViewerImages(images);
+    setViewerIndex(index);
+  };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tree Guide</Text>
+      <Text style={styles.title}>Spotree Guide</Text>
       <Text style={styles.subtitle}>
-        Learn about Munich's native tree species before you map
+        Learn about Munich's native tree species before you spot
       </Text>
 
       <FlatList
@@ -120,125 +134,116 @@ export default function TreeGuideScreen() {
         contentContainerStyle={styles.listContent}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <SpeciesCard
-            species={item}
-            onPress={() => setSelected(item)}
-            onImagePress={() => setViewerImage({ images: item.images, index: 0 })}
-          />
+          <SpeciesCard species={item} onPress={() => openSpecies(item)} />
         )}
       />
 
-      <Modal visible={!!selected} transparent animationType="slide">
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
-            {selected && (
-              <ScrollView showsVerticalScrollIndicator={false}>
-                <View style={styles.modalHeader}>
-                  <View style={{ flex: 1 }}>
-                    <Text style={styles.modalTitle}>{selected.name}</Text>
-                    <Text style={styles.modalScientific}>
-                      {selected.scientificName}
-                    </Text>
-                  </View>
-                  <TouchableOpacity onPress={() => setSelected(null)}>
-                    <Ionicons name="close-circle" size={28} color="#666" />
-                  </TouchableOpacity>
-                </View>
-
-                <ImageCarousel
-                  images={selected.images}
-                  height={220}
-                  onImagePress={(index) => setViewerImage({ images: selected.images, index })}
-                />
-
-                <Text style={styles.sectionLabel}>About</Text>
-                <Text style={styles.summaryText}>{selected.summary}</Text>
-
-                <Text style={styles.sectionLabel}>Plant Description</Text>
-                <View style={styles.chipsContainer}>
-                  <InfoChip icon="resize" label="Height" value={selected.height} />
-                  <InfoChip icon="swap-horizontal" label="Width" value={selected.width} />
-                  <InfoChip icon="speedometer" label="Growth" value={selected.growthRate} />
-                  <InfoChip icon="color-palette" label="Flower" value={selected.flowerColor} />
-                  <InfoChip icon="calendar" label="Blooms" value={selected.floweringSeason} />
-                  <InfoChip icon="leaf" label="Leaves" value={selected.leafRetention} />
-                </View>
-
-                <Text style={styles.sectionLabel}>Growth Requirements</Text>
-                <View style={styles.growthRow}>
-                  <View style={styles.growthItem}>
-                    <Ionicons name="sunny" size={20} color="#f59e0b" />
-                    <Text style={styles.growthText}>{selected.sun}</Text>
-                  </View>
-                  <View style={styles.growthItem}>
-                    <Ionicons name="water" size={20} color="#3b82f6" />
-                    <Text style={styles.growthText}>{selected.drainage}</Text>
-                  </View>
-                </View>
-
-                <Text style={styles.sectionLabel}>Natural Habitat</Text>
-                <View style={styles.habitatBox}>
-                  <Ionicons name="earth" size={18} color="#52b788" />
-                  <Text style={styles.habitatText}>{selected.naturalHabitat}</Text>
-                </View>
-
-                <Text style={styles.sectionLabel}>Common Uses</Text>
-                <View style={styles.usesContainer}>
-                  {selected.commonUses.split(', ').map((use, i) => (
-                    <View key={i} style={styles.useBadge}>
-                      <Text style={styles.useText}>{use}</Text>
+      <Modal visible={modalVisible} transparent animationType="slide" onRequestClose={closeModal}>
+        {!viewerImages ? (
+          <View style={styles.modalOverlay}>
+            <View style={styles.modalContent}>
+              {selected && (
+                <ScrollView showsVerticalScrollIndicator={false}>
+                  <View style={styles.modalHeader}>
+                    <View style={{ flex: 1 }}>
+                      <Text style={styles.modalTitle}>{selected.name}</Text>
+                      <Text style={styles.modalScientific}>
+                        {selected.scientificName}
+                      </Text>
                     </View>
-                  ))}
-                </View>
-
-                <TouchableOpacity
-                  style={styles.easyscapeButton}
-                  onPress={() => Linking.openURL(selected.easyscapeUrl)}
-                >
-                  <Ionicons name="earth" size={18} color="#fff" />
-                  <Text style={styles.easyscapeButtonText}>
-                    Learn more on Easyscape
-                  </Text>
-                  <Ionicons name="open-outline" size={16} color="rgba(255,255,255,0.7)" />
-                </TouchableOpacity>
-
-                <View style={{ height: 30 }} />
-              </ScrollView>
-            )}
-          </View>
-        </View>
-      </Modal>
-
-      <Modal visible={!!viewerImage} transparent animationType="fade">
-        <View style={styles.viewerOverlay}>
-          <TouchableOpacity style={styles.viewerClose} onPress={() => setViewerImage(null)}>
-            <Ionicons name="close" size={28} color="#fff" />
-          </TouchableOpacity>
-          {viewerImage && (
-            <>
-              <FlatList
-                ref={viewerRef}
-                data={viewerImage.images}
-                horizontal
-                pagingEnabled
-                showsHorizontalScrollIndicator={false}
-                keyExtractor={(_, i) => i.toString()}
-                getItemLayout={(_, index) => ({ length: SCREEN_WIDTH, offset: SCREEN_WIDTH * index, index })}
-                initialScrollIndex={viewerImage.index}
-                renderItem={({ item }) => (
-                  <View style={styles.viewerPage}>
-                    <Image
-                      source={item as ImageSourcePropType}
-                      style={styles.viewerImage}
-                      resizeMode="contain"
-                    />
+                    <TouchableOpacity onPress={closeModal}>
+                      <Ionicons name="close-circle" size={28} color="#666" />
+                    </TouchableOpacity>
                   </View>
-                )}
-              />
-              <Text style={styles.viewerHint}>Swipe to browse</Text>
-            </>
-          )}
-        </View>
+
+                  <ImageCarousel
+                    images={selected.images}
+                    height={220}
+                    onImagePress={(index) => openViewer(selected.images, index)}
+                  />
+
+                  <Text style={styles.sectionLabel}>About</Text>
+                  <Text style={styles.summaryText}>{selected.summary}</Text>
+
+                  <Text style={styles.sectionLabel}>Plant Description</Text>
+                  <View style={styles.chipsContainer}>
+                    <InfoChip icon="resize" label="Height" value={selected.height} />
+                    <InfoChip icon="swap-horizontal" label="Width" value={selected.width} />
+                    <InfoChip icon="speedometer" label="Growth" value={selected.growthRate} />
+                    <InfoChip icon="color-palette" label="Flower" value={selected.flowerColor} />
+                    <InfoChip icon="calendar" label="Blooms" value={selected.floweringSeason} />
+                    <InfoChip icon="leaf" label="Leaves" value={selected.leafRetention} />
+                  </View>
+
+                  <Text style={styles.sectionLabel}>Growth Requirements</Text>
+                  <View style={styles.growthRow}>
+                    <View style={styles.growthItem}>
+                      <Ionicons name="sunny" size={20} color="#f59e0b" />
+                      <Text style={styles.growthText}>{selected.sun}</Text>
+                    </View>
+                    <View style={styles.growthItem}>
+                      <Ionicons name="water" size={20} color="#3b82f6" />
+                      <Text style={styles.growthText}>{selected.drainage}</Text>
+                    </View>
+                  </View>
+
+                  <Text style={styles.sectionLabel}>Natural Habitat</Text>
+                  <View style={styles.habitatBox}>
+                    <Ionicons name="earth" size={18} color="#52b788" />
+                    <Text style={styles.habitatText}>{selected.naturalHabitat}</Text>
+                  </View>
+
+                  <Text style={styles.sectionLabel}>Common Uses</Text>
+                  <View style={styles.usesContainer}>
+                    {selected.commonUses.split(', ').map((use, i) => (
+                      <View key={i} style={styles.useBadge}>
+                        <Text style={styles.useText}>{use}</Text>
+                      </View>
+                    ))}
+                  </View>
+
+                  <TouchableOpacity
+                    style={styles.easyscapeButton}
+                    onPress={() => Linking.openURL(selected.easyscapeUrl)}
+                  >
+                    <Ionicons name="earth" size={18} color="#fff" />
+                    <Text style={styles.easyscapeButtonText}>
+                      Learn more on Easyscape
+                    </Text>
+                    <Ionicons name="open-outline" size={16} color="rgba(255,255,255,0.7)" />
+                  </TouchableOpacity>
+
+                  <View style={{ height: 30 }} />
+                </ScrollView>
+              )}
+            </View>
+          </View>
+        ) : (
+          <View style={styles.viewerOverlay}>
+            <TouchableOpacity style={styles.viewerClose} onPress={() => setViewerImages(null)}>
+              <Ionicons name="close" size={28} color="#fff" />
+            </TouchableOpacity>
+            <FlatList
+              data={viewerImages}
+              horizontal
+              pagingEnabled
+              showsHorizontalScrollIndicator={false}
+              keyExtractor={(_, i) => i.toString()}
+              getItemLayout={(_, index) => ({ length: SCREEN_WIDTH, offset: SCREEN_WIDTH * index, index })}
+              initialScrollIndex={viewerIndex}
+              renderItem={({ item }) => (
+                <View style={styles.viewerPage}>
+                  <Image
+                    source={item as ImageSourcePropType}
+                    style={styles.viewerImage}
+                    resizeMode="contain"
+                  />
+                </View>
+              )}
+            />
+            <Text style={styles.viewerHint}>Swipe to browse</Text>
+          </View>
+        )}
       </Modal>
     </View>
   );

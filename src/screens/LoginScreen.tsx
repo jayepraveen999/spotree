@@ -30,11 +30,7 @@ export default function LoginScreen({ navigation }: any) {
     try {
       await signIn(email, password);
     } catch (e: any) {
-      let message = 'Something went wrong.';
-      if (e.code === 'auth/invalid-credential') message = 'Invalid email or password.';
-      if (e.code === 'auth/user-not-found') message = 'No account found with this email.';
-      if (e.code === 'auth/too-many-requests') message = 'Too many attempts. Try again later.';
-      Alert.alert('Sign-In Failed', message);
+      Alert.alert('Sign-In Failed', e.message || 'Something went wrong.');
     } finally {
       setLoading(false);
     }
@@ -51,11 +47,12 @@ export default function LoginScreen({ navigation }: any) {
       >
         <View style={styles.headerSection}>
           <View style={styles.logoContainer}>
+            <Ionicons name="musical-notes" size={28} color="#1DB954" style={{ position: 'absolute', top: -4, right: -4 }} />
             <Ionicons name="leaf" size={48} color="#2d6a4f" />
           </View>
-          <Text style={styles.title}>TreeQuest</Text>
+          <Text style={styles.title}>Spotree</Text>
           <Text style={styles.subtitle}>
-            Map trees. Drop songs. Explore Munich.
+            Spot trees. Drop beats. Explore Munich.
           </Text>
         </View>
 

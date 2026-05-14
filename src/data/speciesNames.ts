@@ -1,4 +1,5 @@
 export const ALL_MUNICH_SPECIES = [
+  'Not Sure',
   'European Beech (Fagus sylvatica)',
   'European Hornbeam (Carpinus betulus)',
   'English Oak (Quercus robur)',
