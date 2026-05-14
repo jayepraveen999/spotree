@@ -116,9 +116,6 @@ export default function MapScreen({ navigation }: any) {
                       <Text style={styles.spotifyTrack}>
                         {selected.spotifyTrackName}
                       </Text>
-                      <Text style={styles.spotifyArtist}>
-                        {selected.spotifyArtist}
-                      </Text>
                     </View>
                     <Ionicons name="play-circle" size={24} color="#fff" />
                   </TouchableOpacity>

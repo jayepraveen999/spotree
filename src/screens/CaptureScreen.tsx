@@ -122,7 +122,6 @@ export default function CaptureScreen({ navigation }: any) {
   const [notes, setNotes] = useState('');
   const [spotifyUrl, setSpotifyUrl] = useState('');
   const [spotifyTrackName, setSpotifyTrackName] = useState('');
-  const [spotifyArtist, setSpotifyArtist] = useState('');
   const [locationLoading, setLocationLoading] = useState(false);
   const [validating, setValidating] = useState(false);
 
@@ -260,7 +259,7 @@ export default function CaptureScreen({ navigation }: any) {
         notes,
         spotifyUrl,
         spotifyTrackName,
-        spotifyArtist,
+        spotifyArtist: '',
         createdAt: new Date().toISOString(),
       });
       setPhotoUri('');
@@ -276,8 +275,7 @@ export default function CaptureScreen({ navigation }: any) {
       setNotes('');
       setSpotifyUrl('');
       setSpotifyTrackName('');
-      setSpotifyArtist('');
-      Alert.alert('Tree mapped!', 'Your tree has been added to the map.', [
+      Alert.alert('Tree spotted!', 'Your tree has been added to the Spotree map.', [
         { text: 'View Map', onPress: () => navigation.navigate('Map') },
         { text: 'OK' },
       ]);
@@ -296,9 +294,9 @@ export default function CaptureScreen({ navigation }: any) {
       behavior={Platform.OS === 'ios' ? 'padding' : undefined}
     >
       <ScrollView style={styles.scroll} contentContainerStyle={styles.scrollContent}>
-        <Text style={styles.title}>Map a Tree</Text>
+        <Text style={styles.title}>Spot a Tree</Text>
         <Text style={styles.subtitle}>
-          Take a photo, answer what you can, and drop a song
+          Snap a photo, answer what you can, and drop a beat
         </Text>
 
         {/* Photo Section */}
@@ -441,12 +439,6 @@ export default function CaptureScreen({ navigation }: any) {
             value={spotifyTrackName}
             onChangeText={setSpotifyTrackName}
           />
-          <TextInput
-            style={styles.textInput}
-            placeholder="Artist"
-            value={spotifyArtist}
-            onChangeText={setSpotifyArtist}
-          />
         </View>
 
         {/* Submit */}
@@ -464,12 +456,11 @@ export default function CaptureScreen({ navigation }: any) {
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: '#f8faf8' },
   scroll: { flex: 1 },
-  scrollContent: { padding: 20 },
+  scrollContent: { padding: 20, paddingTop: 60 },
   title: {
     fontSize: 28,
     fontWeight: '800',
     color: '#1b4332',
-    marginTop: 8,
   },
   subtitle: {
     fontSize: 15,

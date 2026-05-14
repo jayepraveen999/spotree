@@ -65,9 +65,9 @@ export default function RegisterScreen({ navigation }: any) {
         </TouchableOpacity>
 
         <View style={styles.headerSection}>
-          <Text style={styles.title}>Join TreeQuest</Text>
+          <Text style={styles.title}>Join Spotree</Text>
           <Text style={styles.subtitle}>
-            Create an account to start mapping trees in Munich
+            Create an account to start spotting trees in Munich
           </Text>
         </View>
 
@@ -132,7 +132,7 @@ export default function RegisterScreen({ navigation }: any) {
             <Text style={styles.schoolTitle}>School (optional)</Text>
           </View>
           <Text style={styles.schoolHint}>
-            Adding your school helps us track which schools are most active in mapping Munich's trees
+            Adding your school helps us track which schools are most active on Spotree
           </Text>
           <View style={styles.inputContainer}>
             <Ionicons name="business-outline" size={20} color="#888" style={styles.inputIcon} />

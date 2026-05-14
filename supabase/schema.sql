@@ -37,7 +37,8 @@ create index trees_location_idx on trees using gist (location);
 create index trees_user_id_idx on trees (user_id);
 
 -- Helper view: trees with lat/lng and user name for easy querying
-create or replace view trees_with_user as
+-- security_invoker=false ensures all users see all rows regardless of RLS
+create or replace view trees_with_user with (security_invoker = false) as
 select
   t.id,
   t.user_id,

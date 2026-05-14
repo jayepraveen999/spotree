@@ -87,7 +87,6 @@ function TreeCard({ tree, onViewMap }: { tree: TreeEntry; onViewMap: () => void 
             <Ionicons name="musical-notes" size={18} color="#1DB954" />
             <View style={styles.spotifyInfo}>
               <Text style={styles.spotifyTrack}>{tree.spotifyTrackName}</Text>
-              <Text style={styles.spotifyArtist}>{tree.spotifyArtist}</Text>
             </View>
             <Ionicons name="play-circle" size={22} color="#1DB954" />
           </TouchableOpacity>
@@ -112,7 +111,7 @@ export default function ExploreScreen({ navigation }: any) {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Explore</Text>
-      <Text style={styles.subtitle}>Recently mapped trees and their songs</Text>
+      <Text style={styles.subtitle}>Recently spotted trees and their songs</Text>
       <FlatList
         data={sorted}
         keyExtractor={(item) => item.id}
@@ -124,7 +123,7 @@ export default function ExploreScreen({ navigation }: any) {
         ListEmptyComponent={
           <View style={styles.empty}>
             <Ionicons name="leaf-outline" size={48} color="#ccc" />
-            <Text style={styles.emptyText}>No trees mapped yet. Be the first!</Text>
+            <Text style={styles.emptyText}>No trees spotted yet. Be the first!</Text>
           </View>
         }
       />

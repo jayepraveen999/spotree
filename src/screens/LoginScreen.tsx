@@ -47,11 +47,12 @@ export default function LoginScreen({ navigation }: any) {
       >
         <View style={styles.headerSection}>
           <View style={styles.logoContainer}>
+            <Ionicons name="musical-notes" size={28} color="#1DB954" style={{ position: 'absolute', top: -4, right: -4 }} />
             <Ionicons name="leaf" size={48} color="#2d6a4f" />
           </View>
-          <Text style={styles.title}>TreeQuest</Text>
+          <Text style={styles.title}>Spotree</Text>
           <Text style={styles.subtitle}>
-            Map trees. Drop songs. Explore Munich.
+            Spot trees. Drop beats. Explore Munich.
           </Text>
         </View>
 
