@@ -17,6 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { useApp } from '../context/AppContext';
 import { HEALTH_OPTIONS, HEIGHT_OPTIONS, TRUNK_DIAMETER_OPTIONS } from '../data/treeSpecies';
 import { ALL_MUNICH_SPECIES } from '../data/speciesNames';
+import { validateTreeImage } from '../services/treeValidator';
 
 interface ConfidenceFieldProps {
   label: string;
@@ -123,6 +124,9 @@ export default function CaptureScreen({ navigation }: any) {
   const [spotifyTrackName, setSpotifyTrackName] = useState('');
   const [spotifyArtist, setSpotifyArtist] = useState('');
   const [locationLoading, setLocationLoading] = useState(false);
+  const [validating, setValidating] = useState(false);
+
+  const [photoConfirmed, setPhotoConfirmed] = useState(false);
 
   const takePhoto = async () => {
     const { status } = await ImagePicker.requestCameraPermissionsAsync();
@@ -139,18 +143,73 @@ export default function CaptureScreen({ navigation }: any) {
 
     if (!result.canceled && result.assets[0]) {
       setPhotoUri(result.assets[0].uri);
+      setPhotoConfirmed(false);
+      await getLocation();
     }
   };
 
   const pickPhoto = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
-      aspect: [4, 3],
+      allowsEditing: false,
       quality: 0.7,
+      exif: true,
     });
 
     if (!result.canceled && result.assets[0]) {
-      setPhotoUri(result.assets[0].uri);
+      const asset = result.assets[0];
+      setPhotoUri(asset.uri);
+      setPhotoConfirmed(false);
+
+      const exif = asset.exif;
+      const gpsLat = exif?.GPSLatitude;
+      const gpsLng = exif?.GPSLongitude;
+
+      if (gpsLat != null && gpsLng != null) {
+        const lat = exif?.GPSLatitudeRef === 'S' ? -gpsLat : gpsLat;
+        const lng = exif?.GPSLongitudeRef === 'W' ? -gpsLng : gpsLng;
+        setLocation({ lat, lng });
+      } else {
+        Alert.alert(
+          'No location data',
+          'This photo doesn\'t have GPS info. Would you like to use your current location instead?',
+          [
+            { text: 'Cancel', style: 'cancel', onPress: () => { setPhotoUri(''); } },
+            {
+              text: 'Use Current Location',
+              onPress: () => { getLocation(); },
+            },
+          ],
+        );
+      }
+    }
+  };
+
+  const clearPhoto = () => {
+    setPhotoUri('');
+    setPhotoConfirmed(false);
+  };
+
+  const confirmPhoto = async () => {
+    setValidating(true);
+    try {
+      const result = await validateTreeImage(photoUri);
+      console.log('Tree validation result:', JSON.stringify(result));
+      if (!result.isTree) {
+        Alert.alert(
+          'No tree detected',
+          result.message || 'This image doesn\'t appear to contain a tree. Please take or select a different photo.',
+        );
+        return;
+      }
+      setPhotoConfirmed(true);
+    } catch (e: any) {
+      console.error('Tree validation error:', e?.message || e);
+      Alert.alert(
+        'Verification failed',
+        'Could not verify the image. Please check your connection and try again.',
+      );
+    } finally {
+      setValidating(false);
     }
   };
 
@@ -173,6 +232,10 @@ export default function CaptureScreen({ navigation }: any) {
   }, []);
 
   const handleSubmit = () => {
+    if (!photoConfirmed) {
+      Alert.alert('Photo required', 'Please add a photo and verify it contains a tree.');
+      return;
+    }
     if (!species) {
       Alert.alert('Missing info', 'Please select at least a tree species.');
       return;
@@ -224,10 +287,28 @@ export default function CaptureScreen({ navigation }: any) {
           {photoUri ? (
             <View>
               <Image source={{ uri: photoUri }} style={styles.photo} />
-              <TouchableOpacity style={styles.retakeButton} onPress={takePhoto}>
-                <Ionicons name="camera" size={16} color="#fff" />
-                <Text style={styles.retakeText}>Retake</Text>
+              <TouchableOpacity style={styles.clearPhotoButton} onPress={clearPhoto}>
+                <Ionicons name="close" size={20} color="#fff" />
               </TouchableOpacity>
+              {!photoConfirmed && (
+                validating ? (
+                  <View style={styles.addTreeButton}>
+                    <Ionicons name="leaf" size={18} color="#fff" />
+                    <Text style={styles.addTreeText}>Checking for trees...</Text>
+                  </View>
+                ) : (
+                  <TouchableOpacity style={styles.addTreeButton} onPress={confirmPhoto}>
+                    <Ionicons name="leaf" size={18} color="#fff" />
+                    <Text style={styles.addTreeText}>Add Tree</Text>
+                  </TouchableOpacity>
+                )
+              )}
+              {photoConfirmed && (
+                <View style={styles.confirmedBadge}>
+                  <Ionicons name="checkmark-circle" size={16} color="#2d6a4f" />
+                  <Text style={styles.confirmedText}>Tree verified</Text>
+                </View>
+              )}
             </View>
           ) : (
             <View style={styles.photoButtons}>
@@ -378,6 +459,47 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   photoSection: { marginBottom: 16 },
+  clearPhotoButton: {
+    position: 'absolute',
+    top: 10,
+    right: 10,
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    borderRadius: 16,
+    width: 32,
+    height: 32,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  addTreeButton: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    backgroundColor: '#2d6a4f',
+    borderRadius: 12,
+    padding: 12,
+    marginTop: 10,
+  },
+  addTreeText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: '600',
+  },
+  confirmedBadge: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: 6,
+    backgroundColor: '#e8f5e9',
+    borderRadius: 12,
+    padding: 10,
+    marginTop: 10,
+  },
+  confirmedText: {
+    color: '#2d6a4f',
+    fontSize: 14,
+    fontWeight: '600',
+  },
   photoButtons: {
     flexDirection: 'row',
     gap: 12,
@@ -404,19 +526,6 @@ const styles = StyleSheet.create({
     height: 200,
     borderRadius: 16,
   },
-  retakeButton: {
-    position: 'absolute',
-    bottom: 12,
-    right: 12,
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 4,
-    backgroundColor: 'rgba(0,0,0,0.6)',
-    borderRadius: 20,
-    paddingHorizontal: 12,
-    paddingVertical: 6,
-  },
-  retakeText: { color: '#fff', fontSize: 13 },
   locationRow: {
     flexDirection: 'row',
     alignItems: 'center',
