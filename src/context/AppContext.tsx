@@ -1,6 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { TreeEntry, UserProfile } from '../types';
 import { MOCK_TREES } from '../data/mockTrees';
+import { useAuth } from './AuthContext';
 
 interface AppContextType {
   trees: TreeEntry[];
@@ -8,32 +9,41 @@ interface AppContextType {
   user: UserProfile;
 }
 
-const defaultUser: UserProfile = {
-  id: 'current-user',
-  name: 'You',
-  treesCount: 0,
-  neighborhoodsCovered: [],
-  songsShared: 0,
-  joinedAt: '2026-05-13T00:00:00Z',
-};
-
 const AppContext = createContext<AppContextType>({
   trees: [],
   addTree: () => {},
-  user: defaultUser,
+  user: {
+    id: 'anonymous',
+    name: 'Guest',
+    treesCount: 0,
+    neighborhoodsCovered: [],
+    songsShared: 0,
+    joinedAt: new Date().toISOString(),
+  },
 });
 
 export function AppProvider({ children }: { children: ReactNode }) {
+  const { user: authUser } = useAuth();
   const [trees, setTrees] = useState<TreeEntry[]>(MOCK_TREES);
-  const [user, setUser] = useState<UserProfile>(defaultUser);
+
+  const user: UserProfile = {
+    id: authUser?.uid ?? 'anonymous',
+    name: authUser?.displayName ?? 'Guest',
+    treesCount: trees.filter((t) => t.userId === (authUser?.uid ?? 'anonymous')).length,
+    neighborhoodsCovered: [],
+    songsShared: trees.filter(
+      (t) => t.userId === (authUser?.uid ?? 'anonymous') && t.spotifyUrl
+    ).length,
+    joinedAt: new Date().toISOString(),
+  };
 
   const addTree = (tree: TreeEntry) => {
-    setTrees((prev) => [tree, ...prev]);
-    setUser((prev) => ({
-      ...prev,
-      treesCount: prev.treesCount + 1,
-      songsShared: tree.spotifyUrl ? prev.songsShared + 1 : prev.songsShared,
-    }));
+    const treeWithUser = {
+      ...tree,
+      userId: authUser?.uid ?? 'anonymous',
+      userName: authUser?.displayName ?? 'Guest',
+    };
+    setTrees((prev) => [treeWithUser, ...prev]);
   };
 
   return (
