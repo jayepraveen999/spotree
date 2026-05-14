@@ -24,13 +24,19 @@ export interface TreeSpeciesInfo {
   id: string;
   name: string;
   scientificName: string;
-  description: string;
-  leafType: string;
-  maxHeight: string;
-  prevalence: string;
-  funFact: string;
-  imageUrl: string;
-  identificationTips: string[];
+  summary: string;
+  plantType: string;
+  height: string;
+  width: string;
+  growthRate: string;
+  flowerColor: string;
+  floweringSeason: string;
+  leafRetention: string;
+  sun: string;
+  drainage: string;
+  commonUses: string;
+  naturalHabitat: string;
+  images: number[]; // require() image sources
   easyscapeUrl: string;
 }
 

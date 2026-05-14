@@ -1,0 +1,7 @@
+name = "treequest-ai"
+main = "index.js"
+compatibility_date = "2024-01-01"
+account_id = "9d90372a32e9f03067d32f04246b2603"
+
+[ai]
+binding = "AI"
