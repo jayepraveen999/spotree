@@ -12,42 +12,14 @@ import {
   ScrollView,
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-import * as Google from 'expo-auth-session/providers/google';
-import * as WebBrowser from 'expo-web-browser';
 import { useAuth } from '../context/AuthContext';
 
-WebBrowser.maybeCompleteAuthSession();
-
 export default function LoginScreen({ navigation }: any) {
-  const { signIn, signInWithGoogle } = useAuth();
+  const { signIn } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
-
-  // TODO: Replace with your Google OAuth client IDs from Firebase console
-  const [request, response, promptAsync] = Google.useIdTokenAuthRequest({
-    clientId: 'YOUR_GOOGLE_WEB_CLIENT_ID',
-    iosClientId: 'YOUR_GOOGLE_IOS_CLIENT_ID',
-  });
-
-  React.useEffect(() => {
-    if (response?.type === 'success') {
-      const { id_token } = response.params;
-      handleGoogleSignIn(id_token);
-    }
-  }, [response]);
-
-  const handleGoogleSignIn = async (idToken: string) => {
-    setLoading(true);
-    try {
-      await signInWithGoogle(idToken);
-    } catch (e: any) {
-      Alert.alert('Google Sign-In Failed', e.message);
-    } finally {
-      setLoading(false);
-    }
-  };
 
   const handleEmailSignIn = async () => {
     if (!email || !password) {
@@ -85,21 +57,6 @@ export default function LoginScreen({ navigation }: any) {
           <Text style={styles.subtitle}>
             Map trees. Drop songs. Explore Munich.
           </Text>
-        </View>
-
-        <TouchableOpacity
-          style={styles.googleButton}
-          onPress={() => promptAsync()}
-          disabled={!request || loading}
-        >
-          <Ionicons name="logo-google" size={20} color="#333" />
-          <Text style={styles.googleButtonText}>Continue with Google</Text>
-        </TouchableOpacity>
-
-        <View style={styles.divider}>
-          <View style={styles.dividerLine} />
-          <Text style={styles.dividerText}>or</Text>
-          <View style={styles.dividerLine} />
         </View>
 
         <View style={styles.inputContainer}>
@@ -187,38 +144,6 @@ const styles = StyleSheet.create({
     color: '#666',
     marginTop: 6,
     textAlign: 'center',
-  },
-  googleButton: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: 10,
-    backgroundColor: '#fff',
-    borderRadius: 14,
-    padding: 16,
-    borderWidth: 1,
-    borderColor: '#ddd',
-    marginBottom: 20,
-  },
-  googleButtonText: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: '#333',
-  },
-  divider: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 20,
-  },
-  dividerLine: {
-    flex: 1,
-    height: 1,
-    backgroundColor: '#ddd',
-  },
-  dividerText: {
-    marginHorizontal: 16,
-    color: '#999',
-    fontSize: 14,
   },
   inputContainer: {
     flexDirection: 'row',

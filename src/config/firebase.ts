@@ -5,14 +5,13 @@ import { getReactNativePersistence } from '@firebase/auth/dist/rn/index.js';
 import { getFirestore } from 'firebase/firestore';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-// TODO: Replace with your Firebase project config from console.firebase.google.com
 const firebaseConfig = {
-  apiKey: 'YOUR_API_KEY',
-  authDomain: 'YOUR_PROJECT.firebaseapp.com',
-  projectId: 'YOUR_PROJECT_ID',
-  storageBucket: 'YOUR_PROJECT.firebasestorage.app',
-  messagingSenderId: 'YOUR_SENDER_ID',
-  appId: 'YOUR_APP_ID',
+  apiKey: 'AIzaSyCwNIaVw6tnmlBsYU8zZzEI7aareCsR1yo',
+  authDomain: 'treequest-65b8f.firebaseapp.com',
+  projectId: 'treequest-65b8f',
+  storageBucket: 'treequest-65b8f.firebasestorage.app',
+  messagingSenderId: '131091322115',
+  appId: '1:131091322115:web:b4fda27924967786c4c536',
 };
 
 const app = initializeApp(firebaseConfig);
