@@ -55,7 +55,7 @@ export default function ProfileScreen() {
           </View>
           <View style={styles.userInfo}>
             <Text style={styles.userName}>
-              {authUser.displayName || 'Tree Explorer'}
+              {authUser.displayName || 'Spotree Explorer'}
             </Text>
             <Text style={styles.userEmail}>{authUser.email}</Text>
           </View>
@@ -106,7 +106,7 @@ export default function ProfileScreen() {
         <View style={styles.statCard}>
           <Ionicons name="leaf" size={28} color="#2d6a4f" />
           <Text style={styles.statNumber}>{myTrees.length}</Text>
-          <Text style={styles.statLabel}>Trees Mapped</Text>
+          <Text style={styles.statLabel}>Trees Spotted</Text>
         </View>
         <View style={styles.statCard}>
           <Ionicons name="musical-notes" size={28} color="#1DB954" />
@@ -131,7 +131,7 @@ export default function ProfileScreen() {
           <View style={styles.empty}>
             <Ionicons name="leaf-outline" size={40} color="#ccc" />
             <Text style={styles.emptyText}>
-              You haven't mapped any trees yet.{'\n'}Head to the Capture tab to start!
+              You haven't spotted any trees yet.{'\n'}Head to the Capture tab to start!
             </Text>
           </View>
         }

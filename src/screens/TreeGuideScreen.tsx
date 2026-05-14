@@ -121,9 +121,9 @@ export default function TreeGuideScreen() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tree Guide</Text>
+      <Text style={styles.title}>Spotree Guide</Text>
       <Text style={styles.subtitle}>
-        Learn about Munich's native tree species before you map
+        Learn about Munich's native tree species before you spot
       </Text>
 
       <FlatList
