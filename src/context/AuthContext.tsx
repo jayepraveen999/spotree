@@ -1,16 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
-import {
-  onAuthStateChanged,
-  signInWithEmailAndPassword,
-  createUserWithEmailAndPassword,
-  signOut as firebaseSignOut,
-  GoogleAuthProvider,
-  signInWithCredential,
-  updateProfile,
-  User,
-} from 'firebase/auth';
-import { doc, setDoc, getDoc } from 'firebase/firestore';
-import { auth, db } from '../config/firebase';
+import { supabase } from '../config/supabase';
+import { Session } from '@supabase/supabase-js';
 
 interface AuthUser {
   uid: string;
@@ -24,7 +14,6 @@ interface AuthContextType {
   loading: boolean;
   signIn: (email: string, password: string) => Promise<void>;
   signUp: (email: string, password: string, name: string, schoolName: string) => Promise<void>;
-  signInWithGoogle: (idToken: string) => Promise<void>;
   signOut: () => Promise<void>;
   updateSchoolName: (schoolName: string) => Promise<void>;
 }
@@ -34,21 +23,27 @@ const AuthContext = createContext<AuthContextType>({
   loading: true,
   signIn: async () => {},
   signUp: async () => {},
-  signInWithGoogle: async () => {},
   signOut: async () => {},
   updateSchoolName: async () => {},
 });
 
-async function fetchUserProfile(uid: string): Promise<{ schoolName: string }> {
-  const snap = await getDoc(doc(db, 'users', uid));
-  if (snap.exists()) {
-    return snap.data() as { schoolName: string };
-  }
-  return { schoolName: '' };
+async function fetchProfile(uid: string): Promise<{ name: string; schoolName: string } | null> {
+  const { data } = await supabase
+    .from('profiles')
+    .select('name, school_name')
+    .eq('id', uid)
+    .single();
+  if (data) return { name: data.name, schoolName: data.school_name || '' };
+  return null;
 }
 
-async function saveUserProfile(uid: string, data: Record<string, any>) {
-  await setDoc(doc(db, 'users', uid), data, { merge: true });
+function sessionToUser(session: Session, profile: { name: string; schoolName: string } | null): AuthUser {
+  return {
+    uid: session.user.id,
+    email: session.user.email ?? null,
+    displayName: profile?.name ?? session.user.email?.split('@')[0] ?? null,
+    schoolName: profile?.schoolName ?? '',
+  };
 }
 
 export function AuthProvider({ children }: { children: ReactNode }) {
@@ -56,65 +51,62 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (firebaseUser: User | null) => {
-      if (firebaseUser) {
-        const profile = await fetchUserProfile(firebaseUser.uid);
-        setUser({
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
-          displayName: firebaseUser.displayName,
-          schoolName: profile.schoolName || '',
-        });
-      } else {
-        setUser(null);
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      if (session) {
+        const profile = await fetchProfile(session.user.id);
+        setUser(sessionToUser(session, profile));
       }
       setLoading(false);
     });
-    return unsubscribe;
+
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (session) {
+        const profile = await fetchProfile(session.user.id);
+        setUser(sessionToUser(session, profile));
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => subscription.unsubscribe();
   }, []);
 
   const signIn = async (email: string, password: string) => {
-    await signInWithEmailAndPassword(auth, email, password);
+    const { error } = await supabase.auth.signInWithPassword({ email, password });
+    if (error) throw error;
   };
 
   const signUp = async (email: string, password: string, name: string, schoolName: string) => {
-    const cred = await createUserWithEmailAndPassword(auth, email, password);
-    await updateProfile(cred.user, { displayName: name });
-    await saveUserProfile(cred.user.uid, {
-      displayName: name,
-      email,
-      schoolName,
-      createdAt: new Date().toISOString(),
-    });
-  };
-
-  const signInWithGoogle = async (idToken: string) => {
-    const credential = GoogleAuthProvider.credential(idToken);
-    const cred = await signInWithCredential(auth, credential);
-    const profile = await fetchUserProfile(cred.user.uid);
-    if (!profile.schoolName) {
-      await saveUserProfile(cred.user.uid, {
-        displayName: cred.user.displayName,
-        email: cred.user.email,
-        createdAt: new Date().toISOString(),
+    const { data, error } = await supabase.auth.signUp({ email, password });
+    if (error) throw error;
+    if (data.user) {
+      const { error: profileError } = await supabase.from('profiles').insert({
+        id: data.user.id,
+        name,
+        school_name: schoolName,
       });
+      if (profileError) {
+        console.error('Profile insert error:', JSON.stringify(profileError));
+      }
     }
   };
 
   const signOut = async () => {
-    await firebaseSignOut(auth);
+    await supabase.auth.signOut();
+    setUser(null);
   };
 
   const updateSchoolName = async (schoolName: string) => {
     if (!user) return;
-    await saveUserProfile(user.uid, { schoolName });
+    await supabase
+      .from('profiles')
+      .update({ school_name: schoolName })
+      .eq('id', user.uid);
     setUser((prev) => (prev ? { ...prev, schoolName } : null));
   };
 
   return (
-    <AuthContext.Provider
-      value={{ user, loading, signIn, signUp, signInWithGoogle, signOut, updateSchoolName }}
-    >
+    <AuthContext.Provider value={{ user, loading, signIn, signUp, signOut, updateSchoolName }}>
       {children}
     </AuthContext.Provider>
   );

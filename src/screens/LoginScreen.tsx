@@ -30,11 +30,7 @@ export default function LoginScreen({ navigation }: any) {
     try {
       await signIn(email, password);
     } catch (e: any) {
-      let message = 'Something went wrong.';
-      if (e.code === 'auth/invalid-credential') message = 'Invalid email or password.';
-      if (e.code === 'auth/user-not-found') message = 'No account found with this email.';
-      if (e.code === 'auth/too-many-requests') message = 'Too many attempts. Try again later.';
-      Alert.alert('Sign-In Failed', message);
+      Alert.alert('Sign-In Failed', e.message || 'Something went wrong.');
     } finally {
       setLoading(false);
     }
