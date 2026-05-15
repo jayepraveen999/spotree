@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 MAY 2026 20:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 MAY 2026 21:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -994,7 +994,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 [1]
 Package hyperref Info: Option `pageanchor' set `true' on input line 132.
 \cardheight=\skip80
-<jayendra.jpeg, id=132, 290.7663pt x 261.8583pt>
+<jayendra.jpeg, id=137, 290.7663pt x 261.8583pt>
 File: jayendra.jpeg Graphic file (type jpg)
 <use jayendra.jpeg>
 Package pdftex.def Info: jayendra.jpeg  used on input line 150.
@@ -1073,7 +1073,7 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 10.0pt on input line 160.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 7.3pt on input line 160.
-<hari.jpeg, id=135, 684.5575pt x 647.41875pt>
+<hari.jpeg, id=140, 684.5575pt x 647.41875pt>
 File: hari.jpeg Graphic file (type jpg)
 <use hari.jpeg>
 Package pdftex.def Info: hari.jpeg  used on input line 191.
@@ -1105,12 +1105,12 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 14.0pt on input line 282.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.0pt on input line 282.
-<../app_screenshots/login_page.PNG, id=157, 647.41875pt x 1403.2425pt>
+<../app_screenshots/login_page.PNG, id=162, 647.41875pt x 1403.2425pt>
 File: ../app_screenshots/login_page.PNG Graphic file (type png)
 <use ../app_screenshots/login_page.PNG>
 Package pdftex.def Info: ../app_screenshots/login_page.PNG  used on input line 288.
 (pdftex.def)             Requested size: 118.14058pt x 256.0748pt.
-<../app_screenshots/profile_2.jpg, id=158, 1294.8375pt x 2646.88875pt>
+<../app_screenshots/profile_2.jpg, id=163, 1294.8375pt x 2646.88875pt>
 File: ../app_screenshots/profile_2.jpg Graphic file (type jpg)
 <use ../app_screenshots/profile_2.jpg>
 Package pdftex.def Info: ../app_screenshots/profile_2.jpg  used on input line 292.
@@ -1120,12 +1120,12 @@ Package pdftex.def Info: ../app_screenshots/profile_2.jpg  used on input line 29
 [5
 
  <../app_screenshots/login_page.PNG> <../app_screenshots/profile_2.jpg>]
-<../app_screenshots/map_1.PNG, id=164, 1294.8375pt x 2649.9pt>
+<../app_screenshots/map_1.PNG, id=170, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/map_1.PNG Graphic file (type png)
 <use ../app_screenshots/map_1.PNG>
 Package pdftex.def Info: ../app_screenshots/map_1.PNG  used on input line 304.
 (pdftex.def)             Requested size: 125.1249pt x 256.0748pt.
-<../app_screenshots/map_2.PNG, id=165, 1294.8375pt x 2649.9pt>
+<../app_screenshots/map_2.PNG, id=171, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/map_2.PNG Graphic file (type png)
 <use ../app_screenshots/map_2.PNG>
 Package pdftex.def Info: ../app_screenshots/map_2.PNG  used on input line 308.
@@ -1141,32 +1141,32 @@ File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 (Font)              scaled to size 10.95pt on input line 317.
-<../app_screenshots/capture_1.PNG, id=171, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_1.PNG, id=176, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_1.PNG Graphic file (type png)
 <use ../app_screenshots/capture_1.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_1.PNG  used on input line 335.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_2.PNG, id=172, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_2.PNG, id=177, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_2.PNG Graphic file (type png)
 <use ../app_screenshots/capture_2.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_2.PNG  used on input line 339.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_3.PNG, id=173, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_3.PNG, id=178, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_3.PNG Graphic file (type png)
 <use ../app_screenshots/capture_3.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_3.PNG  used on input line 343.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_4.PNG, id=174, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_4.PNG, id=179, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_4.PNG Graphic file (type png)
 <use ../app_screenshots/capture_4.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_4.PNG  used on input line 350.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_5.PNG, id=175, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_5.PNG, id=180, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_5.PNG Graphic file (type png)
 <use ../app_screenshots/capture_5.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_5.PNG  used on input line 354.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_6.PNG, id=176, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_6.PNG, id=181, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_6.PNG Graphic file (type png)
 <use ../app_screenshots/capture_6.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_6.PNG  used on input line 358.
@@ -1176,32 +1176,32 @@ Package pdftex.def Info: ../app_screenshots/capture_6.PNG  used on input line 35
 [7
 
 {/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc} <../app_screenshots/capture_1.PNG> <../app_screenshots/capture_2.PNG> <../app_screenshots/capture_3.PNG>]
-<../app_screenshots/capture_7.PNG, id=182, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_7.PNG, id=187, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_7.PNG Graphic file (type png)
 <use ../app_screenshots/capture_7.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_7.PNG  used on input line 371.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_8.PNG, id=183, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_8.PNG, id=188, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_8.PNG Graphic file (type png)
 <use ../app_screenshots/capture_8.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_8.PNG  used on input line 375.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_9.PNG, id=184, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_9.PNG, id=189, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_9.PNG Graphic file (type png)
 <use ../app_screenshots/capture_9.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_9.PNG  used on input line 379.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_10.PNG, id=185, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_10.PNG, id=190, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_10.PNG Graphic file (type png)
 <use ../app_screenshots/capture_10.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_10.PNG  used on input line 386.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_11.PNG, id=186, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_11.PNG, id=191, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_11.PNG Graphic file (type png)
 <use ../app_screenshots/capture_11.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_11.PNG  used on input line 390.
 (pdftex.def)             Requested size: 104.26086pt x 213.39566pt.
-<../app_screenshots/capture_12.PNG, id=187, 1294.8375pt x 2649.9pt>
+<../app_screenshots/capture_12.PNG, id=192, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/capture_12.PNG Graphic file (type png)
 <use ../app_screenshots/capture_12.PNG>
 Package pdftex.def Info: ../app_screenshots/capture_12.PNG  used on input line 394.
@@ -1211,12 +1211,12 @@ Package pdftex.def Info: ../app_screenshots/capture_12.PNG  used on input line 3
 [8 <../app_screenshots/capture_4.PNG> <../app_screenshots/capture_5.PNG> <../app_screenshots/capture_6.PNG> <../app_screenshots/capture_7.PNG> <../app_screenshots/capture_8.PNG> <../app_screenshots/capture_9.PNG>]
 
 [9 <../app_screenshots/capture_10.PNG> <../app_screenshots/capture_11.PNG> <../app_screenshots/capture_12.PNG>]
-<../app_screenshots/explore_1.PNG, id=196, 1294.8375pt x 2649.9pt>
+<../app_screenshots/explore_1.PNG, id=201, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/explore_1.PNG Graphic file (type png)
 <use ../app_screenshots/explore_1.PNG>
 Package pdftex.def Info: ../app_screenshots/explore_1.PNG  used on input line 406.
 (pdftex.def)             Requested size: 125.1249pt x 256.0748pt.
-<../app_screenshots/explore_2.PNG, id=197, 1294.8375pt x 2649.9pt>
+<../app_screenshots/explore_2.PNG, id=202, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/explore_2.PNG Graphic file (type png)
 <use ../app_screenshots/explore_2.PNG>
 Package pdftex.def Info: ../app_screenshots/explore_2.PNG  used on input line 410.
@@ -1226,12 +1226,12 @@ Package pdftex.def Info: ../app_screenshots/explore_2.PNG  used on input line 41
 [10
 
  <../app_screenshots/explore_1.PNG> <../app_screenshots/explore_2.PNG>]
-<../app_screenshots/guide_1.PNG, id=202, 1294.8375pt x 2649.9pt>
+<../app_screenshots/guide_1.PNG, id=207, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/guide_1.PNG Graphic file (type png)
 <use ../app_screenshots/guide_1.PNG>
 Package pdftex.def Info: ../app_screenshots/guide_1.PNG  used on input line 433.
 (pdftex.def)             Requested size: 125.1249pt x 256.0748pt.
-<../app_screenshots/guide_3.PNG, id=203, 1294.8375pt x 2649.9pt>
+<../app_screenshots/guide_3.PNG, id=208, 1294.8375pt x 2649.9pt>
 File: ../app_screenshots/guide_3.PNG Graphic file (type png)
 <use ../app_screenshots/guide_3.PNG>
 Package pdftex.def Info: ../app_screenshots/guide_3.PNG  used on input line 437.
@@ -1241,7 +1241,7 @@ Package pdftex.def Info: ../app_screenshots/guide_3.PNG  used on input line 437.
 [11
 
  <../app_screenshots/guide_1.PNG> <../app_screenshots/guide_3.PNG>]
-<../app_screenshots/profile.PNG, id=209, 645.91313pt x 1324.95pt>
+<../app_screenshots/profile.PNG, id=214, 645.91313pt x 1324.95pt>
 File: ../app_screenshots/profile.PNG Graphic file (type png)
 <use ../app_screenshots/profile.PNG>
 Package pdftex.def Info: ../app_screenshots/profile.PNG  used on input line 455.
@@ -1251,7 +1251,7 @@ Package pdftex.def Info: ../app_screenshots/profile.PNG  used on input line 455.
 [12
 
  <../app_screenshots/profile.PNG>]
-<../app_screenshots/admin_dashboard_screenshot.png, id=214, 1517.67pt x 832.10875pt>
+<../app_screenshots/admin_dashboard_screenshot.png, id=219, 1517.67pt x 832.10875pt>
 File: ../app_screenshots/admin_dashboard_screenshot.png Graphic file (type png)
 <use ../app_screenshots/admin_dashboard_screenshot.png>
 Package pdftex.def Info: ../app_screenshots/admin_dashboard_screenshot.png  used on input line 480.
@@ -1292,27 +1292,31 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 
 [19]
 
-[20] (./proposal.aux)
+[20]
+
+[21
+
+] (./proposal.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
 Package rerunfilecheck Info: File `proposal.out' has not changed.
-(rerunfilecheck)             Checksum: 4055D050B7FCCC02DD06B5CBEF6C3506;3671.
+(rerunfilecheck)             Checksum: 474FFDF58145E1CB104E4B1C424AA554;3858.
  ) 
 Here is how much of TeX's memory you used:
- 31313 strings out of 473190
- 598992 string characters out of 5704335
+ 31335 strings out of 473190
+ 599286 string characters out of 5704335
  1012302 words of memory out of 5000000
- 53829 multiletter control sequences out of 15000+600000
- 659437 words of font info for 218 fonts, out of 8000000 for 9000
+ 53840 multiletter control sequences out of 15000+600000
+ 659618 words of font info for 220 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,93p,1237b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on proposal.pdf (22 pages, 5676934 bytes).
+Output written on proposal.pdf (23 pages, 5680425 bytes).
 PDF statistics:
- 321 PDF objects out of 1000 (max. 8388607)
- 253 compressed objects within 3 object streams
- 59 named destinations out of 1000 (max. 500000)
- 49981 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 340 PDF objects out of 1000 (max. 8388607)
+ 271 compressed objects within 3 object streams
+ 66 named destinations out of 1000 (max. 500000)
+ 49989 words of extra memory for PDF output out of 51595 (max. 10000000)
 

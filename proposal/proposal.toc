@@ -25,3 +25,4 @@
 \contentsline {subsection}{\numberline {9.4}Educational Earth Observation Module}{19}{subsection.9.4}%
 \contentsline {subsection}{\numberline {9.5}Platform Scalability}{20}{subsection.9.5}%
 \contentsline {subsection}{\numberline {9.6}Production Infrastructure}{20}{subsection.9.6}%
+\contentsline {section}{\numberline {10}Local Deployment \& Testing}{21}{section.10}%

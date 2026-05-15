@@ -806,6 +806,51 @@ AI Service & Dedicated inference service & Hetzner Cloud / Cloudflare \\
 
 During the co-creation phase, we will actively visit Munich schools to present and demonstrate Spotree, ensuring students and teachers across the city know about the app and how to use it for real data collection.
 
+% ══════════════════════════════════════════════════════════════
+\clearpage
+\section{Local Deployment \& Testing}
+
+The Spotree prototype is fully open-source and can be cloned, built, and tested on any machine with Node.js installed. The following steps allow reviewers to run the app locally on their own mobile device.
+
+\textbf{Prerequisites:}
+\begin{itemize}
+  \item \textbf{Node.js} (v18 or later) --- \url{https://nodejs.org}
+  \item \textbf{Git} --- to clone the repository
+  \item \textbf{Expo Go} app installed on your mobile device (available on both the \href{https://apps.apple.com/app/expo-go/id982107779}{App Store} and \href{https://play.google.com/store/apps/details?id=host.exp.exponent}{Google Play})
+  \item Your computer and mobile device must be on the \textbf{same Wi-Fi network}
+\end{itemize}
+
+\textbf{Steps:}
+\begin{enumerate}
+  \item \textbf{Clone the repository:}
+  \begin{verbatim}
+  git clone https://github.com/jayepraveen999/spotree.git
+  cd spotree
+  \end{verbatim}
+
+  \item \textbf{Install dependencies:}
+  \begin{verbatim}
+  npm install
+  \end{verbatim}
+
+  \item \textbf{Start the Expo development server:}
+  \begin{verbatim}
+  npx expo start
+  \end{verbatim}
+
+  \item \textbf{Scan the QR code} that appears in the terminal:
+  \begin{itemize}
+    \item \textbf{iOS:} Open the default Camera app and point it at the QR code. Tap the Expo Go banner that appears.
+    \item \textbf{Android:} Open the Expo Go app and tap ``Scan QR Code.''
+  \end{itemize}
+
+  \item The app will bundle and load on your device. You can now \textbf{create an account}, explore the map, spot trees, and test all features.
+\end{enumerate}
+
+\textbf{Admin Dashboard:} To view the admin analytics dashboard, open the file \texttt{admin/index.html} in any web browser. It connects directly to the same Supabase database and displays live data --- no server setup required.
+
+\textbf{Source Code:} \url{https://github.com/jayepraveen999/spotree}
+
 \begin{center}
 {\small If you have any questions or would like to discuss the proposal further, please don't hesitate to reach out to us. We look forward to the opportunity to bring Spotree to life for Munich's students.}
 

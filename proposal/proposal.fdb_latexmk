@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1778871499.54537 "/Users/jayendra/code/treequest/proposal/proposal.tex" "proposal.pdf" "proposal" 1778871503.8204 0
+["pdflatex"] 1778872267.27024 "/Users/jayendra/code/treequest/proposal/proposal.tex" "proposal.pdf" "proposal" 1778872271.45278 0
   "../app_screenshots/admin_dashboard_screenshot.png" 1778868664.23329 1760546 0029f69086bd8192c6de8f15810d232e ""
   "../app_screenshots/capture_1.PNG" 1778870089.43834 116640 fd50f02d8c48145a8e05b6fd247c4bb7 ""
   "../app_screenshots/capture_10.PNG" 1778870089.49803 130115 257997b5a53431333ea1089ddec90e50 ""
@@ -22,7 +22,7 @@
   "../app_screenshots/map_2.PNG" 1778870089.55972 264917 4edc778c4505e29030682f183f2a3a86 ""
   "../app_screenshots/profile.PNG" 1778871000.13394 497271 242f4ac8a2fe3ae6a645414c3ec12e99 ""
   "../app_screenshots/profile_2.jpg" 1778870833.72656 181698 d613ec2823d2a2e119579daada13f6fc ""
-  "/Users/jayendra/code/treequest/proposal/proposal.tex" 1778871499.35066 42604 df0802c435992741ff01ea5aa71c5103 ""
+  "/Users/jayendra/code/treequest/proposal/proposal.tex" 1778872267.06841 44676 b0e71a7e5c81226e4b2cd9da5b86f20f ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1741388039 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1741388039 3124 3813fd4c981d99822890a2861b0d274c ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -232,10 +232,10 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346141 1288109d02d1c772df65535881471649 ""
   "hari.jpeg" 1778858755.53363 42429 7fec936620375888679314777a3d9fc2 ""
   "jayendra.jpeg" 1778860078.10853 267197 79b68052b285fd89b0a283f2c5ff580c ""
-  "proposal.aux" 1778871503.68371 3669 b58ab4e0a9c3f13054dab1998b6a63b9 "pdflatex"
-  "proposal.out" 1778871503.6848 3671 4055d050b7fccc02dd06b5cbef6c3506 "pdflatex"
-  "proposal.tex" 1778871499.35066 42604 df0802c435992741ff01ea5aa71c5103 ""
-  "proposal.toc" 1778871503.68508 2309 ada93f1163eb6dfb3f21317d73f21274 "pdflatex"
+  "proposal.aux" 1778872271.31655 3796 1db1b8b1cfaf0464c14216b078d91d62 "pdflatex"
+  "proposal.out" 1778872271.31767 3858 474ffdf58145e1cb104e4b1c424aa554 "pdflatex"
+  "proposal.tex" 1778872267.06841 44676 b0e71a7e5c81226e4b2cd9da5b86f20f ""
+  "proposal.toc" 1778872271.31794 2395 dc1779f811d0625990aa02bab78958dd "pdflatex"
   (generated)
   "proposal.aux"
   "proposal.log"

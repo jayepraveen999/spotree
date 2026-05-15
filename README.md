@@ -1,6 +1,8 @@
 # Spotree
 
-**Spotify + Tree Mapping** — A crowdsourced tree data collection app built for Munich's innovation challenge. Students spot trees, log species data, and drop a song at every location.
+**Spotify + Tree Mapping** — A crowdsourced tree data collection app built for Munich's Innovation Challenge 2026. Students spot trees, log species data, and drop a song at every location.
+
+**[Proposal (PDF)](proposal/proposal.pdf)**
 
 ## What it does
 
@@ -8,7 +10,8 @@
 - **Identify & describe** — Select from 58 native Munich species, rate health, estimate height and trunk diameter with confidence sliders.
 - **Drop a beat** — Link a Spotify song to each tree. Every tree gets a soundtrack.
 - **Explore** — Feed of all spotted trees with photos, stats, and songs. Tap "View on Map" to zoom to any tree.
-- **Spotree Guide** — Reference cards for all 58 species with swipeable image galleries, growth info, habitat details, and external links.
+- **Spotree Guide** — Reference cards for 12 species with swipeable image galleries, growth info, habitat details, and external links to Easyscape.
+- **Profile** — Personal dashboard showing trees spotted, songs shared, species found, and school affiliation.
 - **Admin dashboard** — Web-based analytics panel with live map, species/school breakdowns, health overview, and activity feed.
 
 ## Tech stack
@@ -35,6 +38,8 @@ src/
 admin/           Web admin dashboard (index.html)
 worker/          Cloudflare Worker proxy for AI validation
 supabase/        Database schema (PostGIS + RLS policies)
+proposal/        LaTeX proposal document and team photos
+app_screenshots/ App and admin dashboard screenshots
 ```
 
 ## Run it
@@ -56,3 +61,12 @@ Schema is in `supabase/schema.sql`. Key features:
 ## AI validation
 
 Photos are resized to 512px, base64-encoded, and sent to a Cloudflare Worker proxy that calls the LLaVA 1.5 vision model. The response is checked for tree-related keywords to reject non-tree images.
+
+## Screenshots
+
+See the [`app_screenshots/`](app_screenshots/) directory for full app and admin dashboard screenshots.
+
+## Team
+
+- **Jayendra Praveen Kumar** — Lead Developer & Applied Research (OroraTech, TU Munich)
+- **Hari Krishna Gadi** — Initiative, Architecture & Implementation (Huawei Technologies, TU Munich)
