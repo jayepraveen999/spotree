@@ -278,19 +278,48 @@ Verification \& updates & AI rejects non-tree photos. Confidence sliders on ever
 
 Spotree is built as a native iOS app (React Native + Expo) with 5 main tabs:
 
+\clearpage
+\subsection{Login}
+Students authenticate via email and password using Supabase Auth. New users can create an account through the Sign Up flow, where they also select their school affiliation.
+
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/login_page.PNG}\\
+{\small\textit{The Spotree login screen --- ``Spot trees. Drop beats. Explore Munich.'' Students sign in with email and password.}}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/profile_2.jpg}\\
+{\small\textit{The Sign Up form: students enter their name, email, password, and optionally their school to help track which schools are most active on Spotree.}}
+\end{minipage}
+\end{center}
+
+\clearpage
 \subsection{Map}
 The central view showing all spotted trees across Munich on an interactive map. Each tree marker indicates its location; markers with a music badge have a linked Spotify song. Tapping a marker opens a detail card showing species, health, height, who mapped it, and a play button for the linked song.
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Map View]}\vspace{1.5cm}}}\end{center}
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/map_1.PNG}\\
+{\small\textit{Overview of Munich showing all spotted trees. Leaf markers indicate tree locations; markers with a music badge have a linked Spotify song.}}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/map_2.PNG}\\
+{\small\textit{Tapping a marker opens a detail card with species, health, height, mapper info, and a play button for the linked song (here: ``Shape of You'').}}
+\end{minipage}
+\end{center}
 
+\clearpage
 \subsection{Capture (Spot a Tree)}
 The guided data collection form. Students can:
 \begin{itemize}
   \item \textbf{Take a photo} (camera) or \textbf{pick from gallery} (with EXIF GPS extraction)
   \item AI validates the photo contains a tree before proceeding
   \item Select \textbf{tree species} from 58 Munich natives (or ``Not Sure'' if uncertain)
-  \item Rate \textbf{health status} (Healthy / Fair / Poor / Dead)
-  \item Estimate \textbf{tree height} and \textbf{trunk diameter}
+  \item Rate \textbf{health status}: Healthy, Minor issues, Moderate damage, Severe damage, Dead/Dying
+  \item Estimate \textbf{tree height}: Under 5m (small/young), 5--10m (medium), 10--20m (tall), 20--30m (very tall), Over 30m (giant)
+  \item Estimate \textbf{trunk diameter}: Under 10cm (sapling), 10--30cm (young), 30--60cm (mature), 60--100cm (old), Over 100cm (ancient)
   \item Set \textbf{confidence levels} (0--100\%) for each observation via sliders
   \item Add \textbf{free-text notes} about the tree or its surroundings
   \item \textbf{Link a Spotify song} --- paste a URL and name the track
@@ -298,13 +327,92 @@ The guided data collection form. Students can:
 
 After submission, the tree appears on the map for all users.
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Capture Form]}\vspace{1.5cm}}}\end{center}
+\textbf{Form Fields:}
 
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_1.PNG}\\
+{\small\textit{The capture form with Take Photo and Gallery options. The species dropdown shows Munich's native tree species with scientific names.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_2.PNG}\\
+{\small\textit{Estimated height dropdown with five categories from Under 5m (small/young) to Over 30m (giant).}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_3.PNG}\\
+{\small\textit{Trunk diameter dropdown with size/age categories from Under 10cm (sapling) to Over 100cm (ancient).}}
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_4.PNG}\\
+{\small\textit{After a photo is uploaded, the AI validates it. ``Checking for trees\ldots'' appears while the image is analyzed by LLaVA 1.5.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_5.PNG}\\
+{\small\textit{Validation passed --- the ``Add Tree'' button appears, confirming the photo contains a tree and is ready for submission.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_6.PNG}\\
+{\small\textit{``Tree verified'' badge displayed with extracted GPS coordinates. The form fields below are now active for data entry.}}
+\end{minipage}
+\end{center}
+
+\vspace{1em}
+
+
+\textbf{Example: Spotting a Tree}
+
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_7.PNG}\\
+{\small\textit{A completed form with all confidence sliders set and a Spotify song linked via the ``Drop a Song'' section.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_8.PNG}\\
+{\small\textit{``Tree spotted!'' --- the success dialog confirms the tree has been added to the map, with an option to view it directly.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_9.PNG}\\
+{\small\textit{The full capture form before filling in data, showing all available fields and the ``Drop a Song'' section at the bottom.}}
+\end{minipage}
+\end{center}
+
+\begin{center}
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_10.PNG}\\
+{\small\textit{Health status dropdown expanded, showing the five assessment levels from Healthy to Dead/Dying.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_11.PNG}\\
+{\small\textit{Trunk diameter selection with notes field and the ``Drop a Song'' Spotify section visible below.}}
+\end{minipage}\hfill
+\begin{minipage}{0.30\textwidth}\centering
+\includegraphics[height=7.5cm]{../app_screenshots/capture_12.PNG}\\
+{\small\textit{Estimated height dropdown with a selected value, trunk diameter, and the Spotify link section ready for input.}}
+\end{minipage}
+\end{center}
+
+\clearpage
 \subsection{Explore}
 A social feed of recently spotted trees, sorted by time. Each card shows the tree photo, species, health, height, confidence bar, mapper's name, and linked song with a play button. A \textbf{``View on Map''} button zooms directly to any tree's location on the map.
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Explore Feed]}\vspace{1.5cm}}}\end{center}
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/explore_1.PNG}\\
+{\small\textit{The Explore feed shows recently spotted trees with photos, species, health status, confidence bars, linked songs with play buttons, and a ``View on Map'' button.}}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/explore_2.PNG}\\
+{\small\textit{Scrolling reveals more entries from different users and schools, each with their own tree data and song choice.}}
+\end{minipage}
+\end{center}
 
+\clearpage
 \subsection{Spotree Guide}
 An educational reference for Munich's native tree species:
 \begin{itemize}
@@ -319,8 +427,19 @@ An educational reference for Munich's native tree species:
 
 Data sourced from Easyscape, a botanical reference platform with verified species information.
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Spotree Guide]}\vspace{1.5cm}}}\end{center}
+\vspace{1em}
+\begin{center}
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/guide_1.PNG}\\
+{\small\textit{The Spotree Guide presents Munich's native tree species in a visual grid. Each card shows a representative photo, common name, and scientific name.}}
+\end{minipage}\hfill
+\begin{minipage}{0.45\textwidth}\centering
+\includegraphics[height=9cm]{../app_screenshots/guide_3.PNG}\\
+{\small\textit{Species detail view for European Beech: plant description chips, growth requirements, natural habitat, common uses, and a link to Easyscape for deeper learning.}}
+\end{minipage}
+\end{center}
 
+\clearpage
 \subsection{Profile}
 Personal dashboard showing:
 \begin{itemize}
@@ -331,8 +450,13 @@ Personal dashboard showing:
   \item School affiliation (set once during registration)
 \end{itemize}
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Profile]}\vspace{1.5cm}}}\end{center}
+\vspace{1em}
+\begin{center}
+\includegraphics[height=9cm]{../app_screenshots/profile.PNG}\\
+{\small\textit{The Profile tab shows the student's name, email, school affiliation, and stats --- Trees Spotted, Songs Shared, and Species Found. Below, a list of all personally mapped trees with dates, health status, and song indicators.}}
+\end{center}
 
+\clearpage
 \subsection{Admin Analytics Dashboard}
 
 The admin dashboard is a web application designed for teachers, city administrators, and GeodataService staff to monitor the project at a glance. It connects to the same database as the mobile app and displays live data.
@@ -351,7 +475,11 @@ The admin dashboard is a web application designed for teachers, city administrat
 
 \textbf{School-level analytics} are particularly valuable: they show which schools and neighborhoods are actively engaged, help identify coverage gaps, and enable targeted outreach to underrepresented areas.
 
-\begin{center}\fbox{\parbox{0.8\linewidth}{\centering\vspace{1.5cm}\textit{[Screenshot: Admin Dashboard]}\vspace{1.5cm}}}\end{center}
+\vspace{1em}
+\begin{center}
+\includegraphics[width=\textwidth]{../app_screenshots/admin_dashboard_screenshot.png}\\
+{\small\textit{The admin dashboard showing live stats (18 trees, 3 users, 16 species, 14 songs), species breakdown with distribution bars, school-level analytics (LMU vs.\ TUM), health overview, real-time activity feed, and an interactive dark-themed map of all spotted trees across Munich.}}
+\end{center}
 
 % ══════════════════════════════════════════════════════════════
 \clearpage

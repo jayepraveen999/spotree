@@ -2,25 +2,26 @@
 \contentsline {section}{\numberline {2}Executive Summary}{2}{section.2}%
 \contentsline {section}{\numberline {3}Challenge Response}{3}{section.3}%
 \contentsline {section}{\numberline {4}App Description}{4}{section.4}%
-\contentsline {subsection}{\numberline {4.1}Map}{4}{subsection.4.1}%
-\contentsline {subsection}{\numberline {4.2}Capture (Spot a Tree)}{4}{subsection.4.2}%
-\contentsline {subsection}{\numberline {4.3}Explore}{4}{subsection.4.3}%
-\contentsline {subsection}{\numberline {4.4}Spotree Guide}{5}{subsection.4.4}%
-\contentsline {subsection}{\numberline {4.5}Profile}{5}{subsection.4.5}%
-\contentsline {subsection}{\numberline {4.6}Admin Analytics Dashboard}{6}{subsection.4.6}%
-\contentsline {section}{\numberline {5}Data Collection \& Value for GeodataService Munich}{7}{section.5}%
-\contentsline {section}{\numberline {6}AI Integration}{8}{section.6}%
-\contentsline {section}{\numberline {7}Technical Architecture}{9}{section.7}%
-\contentsline {subsection}{\numberline {7.1}Tech Stack}{9}{subsection.7.1}%
-\contentsline {section}{\numberline {8}OGC Compliance \& Data Export}{10}{section.8}%
-\contentsline {section}{\numberline {9}Co-Creation Phase Roadmap}{11}{section.9}%
-\contentsline {subsection}{\numberline {9.1}Gamification \& Reward System}{11}{subsection.9.1}%
-\contentsline {subsection}{\numberline {9.2}AI-Powered Species Classification}{11}{subsection.9.2}%
-\contentsline {subsubsection}{\numberline {9.2.1}Approach}{11}{subsubsection.9.2.1}%
-\contentsline {subsubsection}{\numberline {9.2.2}Continuous Learning from Student Data}{11}{subsubsection.9.2.2}%
-\contentsline {subsection}{\numberline {9.3}Location Accuracy \& Camera-to-Tree Distance}{12}{subsection.9.3}%
-\contentsline {subsubsection}{\numberline {9.3.1}Distance Estimation}{12}{subsubsection.9.3.1}%
-\contentsline {subsubsection}{\numberline {9.3.2}Coordinate Correction}{12}{subsubsection.9.3.2}%
-\contentsline {subsection}{\numberline {9.4}Educational Earth Observation Module}{12}{subsection.9.4}%
-\contentsline {subsection}{\numberline {9.5}Platform Scalability}{13}{subsection.9.5}%
-\contentsline {subsection}{\numberline {9.6}Production Infrastructure}{13}{subsection.9.6}%
+\contentsline {subsection}{\numberline {4.1}Login}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Map}{6}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Capture (Spot a Tree)}{7}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Explore}{10}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Spotree Guide}{11}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Profile}{12}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Admin Analytics Dashboard}{13}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Data Collection \& Value for GeodataService Munich}{14}{section.5}%
+\contentsline {section}{\numberline {6}AI Integration}{15}{section.6}%
+\contentsline {section}{\numberline {7}Technical Architecture}{16}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Tech Stack}{16}{subsection.7.1}%
+\contentsline {section}{\numberline {8}OGC Compliance \& Data Export}{17}{section.8}%
+\contentsline {section}{\numberline {9}Co-Creation Phase Roadmap}{18}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Gamification \& Reward System}{18}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}AI-Powered Species Classification}{18}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Approach}{18}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Continuous Learning from Student Data}{18}{subsubsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.3}Location Accuracy \& Camera-to-Tree Distance}{19}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}Distance Estimation}{19}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Coordinate Correction}{19}{subsubsection.9.3.2}%
+\contentsline {subsection}{\numberline {9.4}Educational Earth Observation Module}{19}{subsection.9.4}%
+\contentsline {subsection}{\numberline {9.5}Platform Scalability}{20}{subsection.9.5}%
+\contentsline {subsection}{\numberline {9.6}Production Infrastructure}{20}{subsection.9.6}%
