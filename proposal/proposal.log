@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 MAY 2026 19:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 MAY 2026 19:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -889,6 +889,7 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 Package hyperref Info: Link coloring ON on input line 92.
+ (./proposal.out) (./proposal.out)
 \@outlinefile=\write4
 \openout4 = `proposal.out'.
 
@@ -982,8 +983,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 18.0pt on input line 129.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 18.0pt on input line 129.
-
-No file proposal.toc.
+ (./proposal.toc)
 \tf@toc=\write5
 \openout5 = `proposal.toc'.
 
@@ -994,32 +994,11 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 [1]
 Package hyperref Info: Option `pageanchor' set `true' on input line 132.
 \cardheight=\skip80
-
-
-LaTeX Warning: File `jayendra.jpeg' not found on input line 150.
-
-
-/Users/jayendra/code/treequest/proposal/proposal.tex:150: Package pdftex.def Error: File `jayendra.jpeg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.150 ...cludegraphics[width=3.2cm]{jayendra.jpeg}
-                                                  };
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for T1+ntxtt on input line 150.
-(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd
-File: t1ntxtt.fd 2012/04/20 v3.1
-)
-LaTeX Font Info:    Font shape `T1/ntxtt/m/n' will be
-(Font)              scaled to size 10.95pt on input line 150.
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `ntxtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
+<jayendra.jpeg, id=127, 290.7663pt x 261.8583pt>
+File: jayendra.jpeg Graphic file (type jpg)
+<use jayendra.jpeg>
+Package pdftex.def Info: jayendra.jpeg  used on input line 150.
+(pdftex.def)             Requested size: 91.04872pt x 81.99832pt.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
 (Font)              scaled to size 12.0pt on input line 154.
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
@@ -1094,22 +1073,11 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 10.0pt on input line 160.
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 7.3pt on input line 160.
-
-
-LaTeX Warning: File `hari.jpeg' not found on input line 191.
-
-
-/Users/jayendra/code/treequest/proposal/proposal.tex:191: Package pdftex.def Error: File `hari.jpeg' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.191 ...{\includegraphics[width=3.2cm]{hari.jpeg}
-                                                  };
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<hari.jpeg, id=130, 684.5575pt x 647.41875pt>
+File: hari.jpeg Graphic file (type jpg)
+<use hari.jpeg>
+Package pdftex.def Info: hari.jpeg  used on input line 191.
+(pdftex.def)             Requested size: 91.04872pt x 86.10362pt.
 
 Overfull \hbox (9.77483pt too wide) in paragraph at lines 198--199
  []\T1/ntxtlf/b/n/8 (-20) INITIATIVE$\LMS/ntxsy/m/n/8 ^^A$\T1/ntxtlf/b/n/8 (-20) ARCHITECTURE$\LMS/ntxsy/m/n/8 ^^A$\T1/ntxtlf/b/n/8 (-20) IMPLEMENTATION[] 
@@ -1117,14 +1085,14 @@ Overfull \hbox (9.77483pt too wide) in paragraph at lines 198--199
 
 
 
-[1]
+[1 <./jayendra.jpeg> <./hari.jpeg>]
 
 [2
 
 ]
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/it' will be
 (Font)              scaled to size 10.95pt on input line 243.
-
+ (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/newtx/t1ntxtt.fd)
 
 [3
 
@@ -1152,10 +1120,6 @@ LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
 [7
 
 ]
-
-LaTeX Warning: Reference `sec:ai-species' on page 8 undefined on input line 419.
-
-
 
 [8
 
@@ -1188,35 +1152,22 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/it' will be
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `proposal.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `proposal.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  3A5F8426C3EAC0FA4EB2F20CE05D646E;3588.
+Package rerunfilecheck Info: File `proposal.out' has not changed.
+(rerunfilecheck)             Checksum: 3A5F8426C3EAC0FA4EB2F20CE05D646E;3588.
  ) 
 Here is how much of TeX's memory you used:
- 31155 strings out of 473190
- 593267 string characters out of 5704335
- 1012236 words of memory out of 5000000
- 53695 multiletter control sequences out of 15000+600000
+ 31139 strings out of 473190
+ 592671 string characters out of 5704335
+ 1012302 words of memory out of 5000000
+ 53673 multiletter control sequences out of 15000+600000
  658804 words of font info for 213 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,93p,1237b,1015s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,93p,1237b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on proposal.pdf (15 pages, 208949 bytes).
+Output written on proposal.pdf (15 pages, 521689 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 262 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
  51 named destinations out of 1000 (max. 500000)
- 49677 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 49863 words of extra memory for PDF output out of 51595 (max. 10000000)
 

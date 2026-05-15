@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1778866766.71017 "/Users/jayendra/code/treequest/proposal/proposal.tex" "proposal.pdf" "proposal" 1778866768.19156 2
-  "/Users/jayendra/code/treequest/proposal/proposal.tex" 1778866694.475 36218 3b678273478021a8df18e8b5bbe9198b ""
+["pdflatex"] 1778867724.53744 "/Users/jayendra/code/treequest/proposal/proposal.tex" "proposal.pdf" "proposal" 1778867726.02366 0
+  "/Users/jayendra/code/treequest/proposal/proposal.tex" 1778867724.42557 36359 2308f9ba036c54b09a7662d85ed8459f ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc" 1741388039 2914 fdbc4a54b9bc76f4551b5303f2737d33 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc" 1741388039 3124 3813fd4c981d99822890a2861b0d274c ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/map/fontname/texfonts.map" 1741388039 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -208,12 +208,12 @@
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/xpatch/xpatch.sty" 1741388039 8314 7803f78066c4f9d008405191a4b43073 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/web2c/texmf.cnf" 1741388039 42151 79f67285bdd95beca4d137b380b4b9e5 ""
   "/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-var/web2c/pdftex/pdflatex.fmt" 1741388039 3346141 1288109d02d1c772df65535881471649 ""
-  "hari.jpeg" 0 -1 0 ""
-  "jayendra.jpeg" 0 -1 0 ""
-  "proposal.aux" 1778866768.06378 3549 04a1b243779319bd117fb767f944d3b0 "pdflatex"
-  "proposal.out" 1778866768.06502 3588 3a5f8426c3eac0fa4eb2f20ce05d646e "pdflatex"
-  "proposal.tex" 1778866694.475 36218 3b678273478021a8df18e8b5bbe9198b ""
-  "proposal.toc" 1778866768.06538 2230 341661696c971bf1769e1c0e7007d843 "pdflatex"
+  "hari.jpeg" 1778858755.53363 42429 7fec936620375888679314777a3d9fc2 ""
+  "jayendra.jpeg" 1778860078.10853 267197 79b68052b285fd89b0a283f2c5ff580c ""
+  "proposal.aux" 1778867725.89759 3549 04a1b243779319bd117fb767f944d3b0 "pdflatex"
+  "proposal.out" 1778867725.89871 3588 3a5f8426c3eac0fa4eb2f20ce05d646e "pdflatex"
+  "proposal.tex" 1778867724.42557 36359 2308f9ba036c54b09a7662d85ed8459f ""
+  "proposal.toc" 1778867725.89898 2230 341661696c971bf1769e1c0e7007d843 "pdflatex"
   (generated)
   "proposal.aux"
   "proposal.log"
