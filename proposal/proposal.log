@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  15 MAY 2026 21:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 MAY 2026 02:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1307,13 +1307,13 @@ Package rerunfilecheck Info: File `proposal.out' has not changed.
 Here is how much of TeX's memory you used:
  31331 strings out of 473190
  599208 string characters out of 5704335
- 1012302 words of memory out of 5000000
+ 1012301 words of memory out of 5000000
  53840 multiletter control sequences out of 15000+600000
  659346 words of font info for 218 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,93p,1237b,921s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/txfonts/t1xtt.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmbi.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on proposal.pdf (23 pages, 5680951 bytes).
+Output written on proposal.pdf (23 pages, 5680953 bytes).
 PDF statistics:
  340 PDF objects out of 1000 (max. 8388607)
  271 compressed objects within 3 object streams
